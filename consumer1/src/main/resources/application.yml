@@ -1,0 +1,35 @@
+server:
+  servlet:
+    #  定义项目的访问路径
+    context-path: /consumer
+    #定义端口号
+  port: 7006
+spring:
+  application:
+    #定义应用名称，即服务名称
+    name: consumer-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 15
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5060/eureka/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"

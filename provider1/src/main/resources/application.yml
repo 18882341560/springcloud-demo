@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: provider-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 15
+server:
+  port: 7002
+  servlet:
+    context-path: /provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5060/eureka/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+

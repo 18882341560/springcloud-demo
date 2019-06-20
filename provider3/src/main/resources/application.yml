@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: provider3-server
+  cloud:
+    stream:
+      rabbit:
+        bindings:
+          study_input:
+            consumer: # 进行消费端配置
+              bindingRoutingKey: study-key # 设置一个RoutingKey信息,直连，暂时有问题
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+      bindings:
+        study_input:
+          destination: studyExchange
+          content-type: application/json
+          default-binder: defaultRabbit
+          group: study-group # 进行操作的分组，实际上就表示持久化
+server:
+  port: 7005
+  servlet:
+    context-path: /provider3
+eureka:
+  client:
+    service-url:
+      #defaultZone 这个是不会提示的，此处需要自己写
+      #实际上属性应该是service-url,这个属性是个map（key-value）格式；当key是defaultZone的时候才能被解析；所以这里没有提示，
+      #但是自己还需要写一个defaultZone；
+      defaultZone: http://localhost:5060/eureka/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 20 # 如果现在超过了5秒的间隔（默认是90秒）
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+
+

@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: zuul-server
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 7004
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5060/eureka/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+#路由规则
+
+zuul:
+  routes:
+    provider-server:
+      path: /aa/**
+      serviceId: provider-server
+    consumer-server:
+      path: /consumer/**
+      serviceId: consumer-server
+
