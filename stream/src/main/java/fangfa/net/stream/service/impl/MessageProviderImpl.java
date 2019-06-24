@@ -1,7 +1,8 @@
-package fangfa.net.stream;
+package fangfa.net.stream.service.impl;
 
 import fangfa.net.model.Product;
 import fangfa.net.stream.myprovider.DefaultProcess;
+import fangfa.net.stream.service.IMessageProvider;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.integration.support.MessageBuilder;

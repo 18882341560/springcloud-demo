@@ -1,6 +1,5 @@
 package fangfa.net.cousumer;
 
-import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import fangfa.net.common.component.HystrixStreamServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

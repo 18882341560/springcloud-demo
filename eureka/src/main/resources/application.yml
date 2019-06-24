@@ -11,6 +11,13 @@ eureka:
     fetch-registry: false
     #表示是否向eureka注册服务，即在自己的eureka中注册自己，默认为true，此处应该设置为false；
     register-with-eureka: true
+    #健康检查默认情况下，Eureka使用客户端心跳来确定客户端是否启动。除非另有规定，
+    #否则发现客户端将不会根据Spring Boot执行器传播应用程序的当前运行状况检查状态。
+    #这意味着成功注册后Eureka将永远宣布申请处于“UP”状态。通过启用Eureka运行状况检查可以改变此行为，从而将应用程序状态传播到Eureka。
+    #因此，每个其他应用程序将不会在“UP”之外的状态下将流量发送到应用程序。
+    #只能在application.yml中设置。设置bootstrap.yml中的值将导致不期望的副作用，例如在具有UNKNOWN状态的eureka中注册。
+    healthcheck:
+      enabled: true
     service-url:
       defaultZone:  http://localhost:5060/eureka/eureka
   instance:

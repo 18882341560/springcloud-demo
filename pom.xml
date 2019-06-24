@@ -10,7 +10,7 @@
         <module>eureka</module>
         <module>provider1</module>
         <module>provider2</module>
-        <module>provider3</module>
+        <module>stream-consumer</module>
         <module>zuul</module>
         <module>common</module>
         <module>stream</module>

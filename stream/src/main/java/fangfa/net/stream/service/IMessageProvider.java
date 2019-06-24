@@ -1,4 +1,4 @@
-package fangfa.net.stream;
+package fangfa.net.stream.service;
 
 
 import fangfa.net.model.Product;

@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date: 2019/6/18/018
  * @description: Feign方式 已经做了服务的负载均衡
  */
-@FeignClient(name = "provider-server", path = "/provider", fallback = ConsumerFallbackImpl.class)
+@FeignClient(name = "provider-server", path = "/provider",
+        fallback = ConsumerFallbackImpl.class, primary = false)
 @Component
 public interface ProviderService {
     /**
