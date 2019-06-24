@@ -8,6 +8,7 @@
         <module>cousumer</module>
         <module>consumer1</module>
         <module>eureka</module>
+        <module>eureka-server2</module>
         <module>provider1</module>
         <module>provider2</module>
         <module>stream-consumer</module>

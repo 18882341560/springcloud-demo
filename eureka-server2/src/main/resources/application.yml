@@ -1,5 +1,5 @@
 server:
-  port: 5060
+  port: 5070
   servlet:
     context-path: /eureka
 spring:
@@ -19,7 +19,7 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone:  http://${eureka.instance.hostname}:5070/eureka
+      defaultZone:  http://${eureka.instance.hostname}:5060/eureka
   instance:
     hostname: localhost
   server:
