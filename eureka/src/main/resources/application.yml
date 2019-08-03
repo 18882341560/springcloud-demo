@@ -1,7 +1,5 @@
 server:
   port: 5060
-  servlet:
-    context-path: /eureka
 spring:
   application:
     name: eureka-server
@@ -18,7 +16,7 @@ eureka:
     #只能在application.yml中设置。设置bootstrap.yml中的值将导致不期望的副作用，例如在具有UNKNOWN状态的eureka中注册。
     healthcheck:
       enabled: true
-    service-url:
+    serviceUrl:
       defaultZone:  http://${eureka.instance.hostname}:5070/eureka
   instance:
     hostname: localhost

@@ -1,0 +1,27 @@
+#http://localhost:7009/config-server-dev.yml
+
+spring:
+  application:
+    name: config-server
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/gl-git/gkconfig.git
+          # 该git地址中配置的路径 文件夹
+          search-paths:
+            -  gkconfig
+          default-label: master
+          username: 962422150@qq.com
+          password: gl18882341560
+server:
+  port: 7009
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5060/eureka,http://localhost:5070/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
