@@ -1,0 +1,28 @@
+#http://localhost:7009/test-config-client-dev.yml  命名规则：  服务名-环境.yml
+
+spring:
+  application:
+    # 与git上的文件名称要一致，以这个开头查找文件读取配置信息
+    name: test-config-client
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      #读取的版本环境
+      profile: dev
+      discovery:
+        #读取的config-server服务名称
+        service-id: config-server
+        #开启读取
+        enabled: true
+      fail-fast: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5060/eureka,http://localhost:5070/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#客户端的配置文件  是从 服务端远程拉取下来，并加载到客户端，客户端在加载到上下文中
+server:
+  port: 7010

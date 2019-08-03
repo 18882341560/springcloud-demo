@@ -1,4 +1,4 @@
-#http://localhost:7009/config-server-dev.yml
+#http://localhost:7009/test-config-client-dev.yml  命名规则：  服务名-环境.yml
 
 spring:
   application:
