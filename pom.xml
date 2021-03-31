@@ -37,7 +37,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <commons-lang3.version>3.9</commons-lang3.version>
-        <guava.version>28.0-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <lombok.version>1.18.8</lombok.version>
         <model.version>0.0.1-SNAPSHOT</model.version>
