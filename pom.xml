@@ -42,7 +42,7 @@
         <lombok.version>1.18.8</lombok.version>
         <model.version>0.0.1-SNAPSHOT</model.version>
         <common.version>0.0.1-SNAPSHOT</common.version>
-        <httpclient.version>4.5.9</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
     </properties>
 
     <dependencyManagement>
